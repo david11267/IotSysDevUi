@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="IotSysDevUi.Components.MenuComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IotSysDevUi.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Style="{StaticResource menuBar}">
+        <Grid>
+            <StackPanel Orientation="Vertical" >
+                <RadioButton Style="{StaticResource menuButton}" IsChecked="True" Content="&#xe01d;"/>
+                <RadioButton  Style="{StaticResource menuButton}"  Content="&#xf8f7;"/>
+                <RadioButton  Style="{StaticResource menuButton}" Content="&#xf79a;"/>
+                <RadioButton  Style="{StaticResource menuButton}"  Content="&#xe01d;"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
