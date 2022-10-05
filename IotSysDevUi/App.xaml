@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:IotSysDevUi"
              xmlns:viewModels="clr-namespace:IotSysDevUi.MVVM.ViewModels"
-             xmlns:views1="clr-namespace:IotSysDevUi.MVVM.Views"
+             xmlns:views="clr-namespace:IotSysDevUi.MVVM.Views"
 
              StartupUri="MainWindow.xaml">
     <Application.Resources>
@@ -14,7 +14,13 @@
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModels:KitchenViewModel}">
-                <views1:KitchenView />
+                <views:KitchenView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:BedroomViewModel}">
+                <views:BedroomView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:LivingroomViewModel}">
+                <views:LivingroomView />
             </DataTemplate>
 
         </ResourceDictionary>

@@ -16,23 +16,19 @@
         Width="1280">
 
     <Window.DataContext>
-        <viewModels:MainViewModel/>
+        <viewModels:MainViewModel />
     </Window.DataContext>
 
-<Border Background="#333333" CornerRadius="12">
+    <Border Background="#333333" CornerRadius="12">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto" />
-                
-               
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
 
-            <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
-            <components:MenuComponent Grid.Column="0" Margin="0 0 1180 0" />
-            
-            
+            <ContentControl Grid.Row="0" Content="{Binding CurrentView}" />
+            <components:MenuComponent Grid.Row="1" Margin="0 -140 0 0" />
         </Grid>
-        
+
     </Border>
 </Window>

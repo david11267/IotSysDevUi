@@ -8,7 +8,7 @@
 
     <Border Style="{StaticResource menuBar}">
         <Grid>
-            <StackPanel Orientation="Vertical" >
+            <StackPanel Orientation="Horizontal" >
                 <RadioButton Style="{StaticResource menuButton}" IsChecked="True" Content="&#xe01d;"/>
                 <RadioButton  Style="{StaticResource menuButton}"  Content="&#xf8f7;"/>
                 <RadioButton  Style="{StaticResource menuButton}" Content="&#xf79a;"/>
