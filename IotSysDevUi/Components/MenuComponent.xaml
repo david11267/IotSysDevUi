@@ -7,13 +7,11 @@
              mc:Ignorable="d" >
 
     <Border Style="{StaticResource menuBar}">
-        <Grid>
-            <StackPanel Orientation="Horizontal" >
-                <RadioButton Style="{StaticResource menuButton}" IsChecked="True" Content="&#xe01d;"/>
-                <RadioButton  Style="{StaticResource menuButton}"  Content="&#xf8f7;"/>
-                <RadioButton  Style="{StaticResource menuButton}" Content="&#xf79a;"/>
-                <RadioButton  Style="{StaticResource menuButton}"  Content="&#xe01d;"/>
-            </StackPanel>
-        </Grid>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Command="{Binding KitchenViewCommand}" Style="{StaticResource menuButton}" Content="&#xe01d;" IsChecked="True" />
+            <RadioButton Command="{Binding BedroomViewCommand}" Style="{StaticResource menuButton}" Content="&#xf8f7;" />
+            <RadioButton Command="{Binding LivingroomViewCommand}" Style="{StaticResource menuButton}" Content="&#xf79a;" />
+            <RadioButton x:Name="btnClose" Click="btnClose_Click" Style="{StaticResource menuButton}" Content="&#xf011;"  />
+        </StackPanel>
     </Border>
 </UserControl>
