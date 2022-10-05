@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IotSysDevUi"
+        xmlns:components="clr-namespace:IotSysDevUi.Components"
         mc:Ignorable="d"
         Title="SmartHub"  WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
@@ -11,11 +12,21 @@
         Background="Transparent"        
         Height="720" 
         Width="1280">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
 
-    </Grid>
+    <Window.DataContext>
+        <local:MainWindow/>
+    </Window.DataContext>
+
+<Border Background="#333333" CornerRadius="12">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
+            <components:MenuComponent Grid.Column="0" Margin="0 0 0 0" />
+        </Grid>
+        
+    </Border>
 </Window>
