@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IotSysDevUi"
         xmlns:components="clr-namespace:IotSysDevUi.Components"
+        xmlns:viewModels="clr-namespace:IotSysDevUi.MVVM.ViewModels"
         mc:Ignorable="d"
         Title="SmartHub"  WindowStartupLocation="CenterScreen"
-        WindowStyle="ToolWindow"
+        WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"        
         Height="720" 
         Width="1280">
 
     <Window.DataContext>
-        <local:MainWindow/>
+        <viewModels:MainViewModel/>
     </Window.DataContext>
 
 <Border Background="#333333" CornerRadius="12">
