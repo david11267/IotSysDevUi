@@ -1,6 +1,6 @@
 ﻿namespace IotSysDevUi.MVVM.Models;
 
-internal class DeviceItem
+public class DeviceItem
 { 
     public string DeviceId { get; set; } = "";
     public string DeviceName { get; set; } = "";
