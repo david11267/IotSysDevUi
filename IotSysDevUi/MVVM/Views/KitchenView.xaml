@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IotSysDevUi.MVVM.Views"
+             xmlns:components="clr-namespace:IotSysDevUi.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -13,5 +14,7 @@
         <Border.Background>
             <ImageBrush Opacity="0.75" ImageSource="/Assets/Images/kitchen.jpeg" />
         </Border.Background>
+        <components:TileComponent DeviceType="LIGHT" DeviceName="Test Device" IconActive="&#xf672;" IconInActive="&#xf0eb;" StateActive="Active" StateInActive="Inactive" Grid.Row="0"/>
+
     </Border>
 </UserControl>

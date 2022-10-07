@@ -21,7 +21,7 @@ namespace IotSysDevUi.Components
     public partial class MenuComponent : UserControl
     {
         public MenuComponent()
-        {
+        { 
             InitializeComponent();
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
