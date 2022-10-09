@@ -19,7 +19,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <components:TileComponent
-                            StateInActive="{Binding DeviceType}"
+                            StateInActive="{Binding StateInActive}"
                             StateActive="{Binding StateActive}"
                             IconInActive="{Binding IconInActive}"
                             IconActive="{Binding IconActive}" 
