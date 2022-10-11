@@ -15,7 +15,7 @@
             <ImageBrush Opacity="0.75" ImageSource="/Assets/Images/kitchen.jpeg" />
         </Border.Background>
         <Grid Margin="20">
-            <ItemsControl x:Name="deviceTileListView" ItemsSource="{Binding Devices}">
+            <ItemsControl x:Name="deviceTileListView">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <components:TileComponent
