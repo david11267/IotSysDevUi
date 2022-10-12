@@ -15,27 +15,35 @@
             <ImageBrush Opacity="0.75" ImageSource="/Assets/Images/kitchen.jpeg" />
         </Border.Background>
         <Grid Margin="20">
-            <ItemsControl x:Name="deviceTileListView">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="{Binding Title}" />
+
+            <ItemsControl Grid.Row="1" x:Name="deviceTileListView" ItemsSource="{Binding DeviceItems}">
+
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <components:TileComponent
-                            StateInActive="{Binding StateInActive}"
-                            StateActive="{Binding StateActive}"
-                            IconInActive="{Binding IconInActive}"
-                            IconActive="{Binding IconActive}" 
+                        <components:TileComponent 
+                            DeviceName="{Binding DeviceName}" 
                             DeviceType="{Binding DeviceType}"
-                            DeviceName="{Binding DeviceName}"/>
+                            IconActive="{Binding IconActive}"
+                            IconInActive="{Binding IconInActive}"
+                            StateActive="{Binding StateActive}"
+                            StateInActive="{Binding StateInActive}"
+                        />
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
 
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel/>
+                        <WrapPanel />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
             </ItemsControl>
-            
         </Grid>
     </Border>
 </UserControl>
