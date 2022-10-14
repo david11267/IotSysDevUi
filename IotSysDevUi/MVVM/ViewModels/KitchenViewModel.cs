@@ -62,6 +62,8 @@ internal class KitchenViewModel
                 _tempList.Add(item);
         }
 
+      
+
         foreach (var item in _tempList)
         {
             _deviceItems.Remove(item);
