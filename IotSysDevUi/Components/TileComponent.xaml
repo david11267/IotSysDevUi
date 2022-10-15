@@ -22,6 +22,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Style="{StaticResource tilePanelState}" />
+                <Button Click="deleteDeviceBtn_Click" x:Name="deleteDeviceBtn" Grid.Column="0" Style="{StaticResource tileDeleteButton }">Delete</Button>
                 <CheckBox x:Name="toggleButton" Grid.Column="1" Style="{StaticResource tilePanelToggleButton }" HorizontalAlignment="Right" />
             </Grid>
 

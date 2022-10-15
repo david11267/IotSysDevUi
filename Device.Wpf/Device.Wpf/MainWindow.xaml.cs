@@ -29,7 +29,7 @@ namespace Device.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string _connect_url = "http://localhost:7071/api/devices/connect";
+        private readonly string _connect_url = "https://iotassignmentsysdev.azurewebsites.net/api/devices/connect";
         private readonly string _connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=M:\\PROJECTS\\Local\\IotSysDevUi\\Device.Wpf\\Device.Wpf\\Data\\device_db.mdf;Integrated Security=True;Connect Timeout=30";
         private DeviceClient _deviceClient;
         private DeviceInfo deviceInfo;
@@ -68,7 +68,7 @@ namespace Device.Wpf
             {
                 tbStateMessage.Text = "Initializing ConnectionString. Please wait...";
                 using var http = new HttpClient();
-                var result = await http.PostAsJsonAsync(_connect_url, new { deviceId = _deviceId });
+                var result = await http.PostAsJsonAsync(_connect_url, new { DeviceId = _deviceId });
                 device_ConnectionString = await result.Content.ReadAsStringAsync();
                 await conn.ExecuteAsync("UPDATE DeviceInfo SET ConnectionString = @ConnectionString WHERE DeviceId = @DeviceId", new { DeviceId = _deviceId, ConnectionString = device_ConnectionString });
             }

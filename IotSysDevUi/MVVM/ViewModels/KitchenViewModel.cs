@@ -93,6 +93,7 @@ internal class KitchenViewModel
                     try { device.DeviceType = twin.Properties.Reported["deviceType"]; }
                     catch { }
 
+
                     switch (device.DeviceType.ToLower())
                     {
                         case "fan":
@@ -115,8 +116,9 @@ internal class KitchenViewModel
                             device.StateActive = "ENABLE";
                             device.StateInActive = "DISABLE";
                             break;
-                    }
 
+                        
+                    }
                     _deviceItems.Add(device);
                 }
                 else { }

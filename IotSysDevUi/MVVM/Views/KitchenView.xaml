@@ -27,6 +27,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <components:TileComponent 
+                            DeviceId="{Binding DeviceId}"
                             DeviceName="{Binding DeviceName}" 
                             DeviceType="{Binding DeviceType}"
                             IconActive="{Binding IconActive}"

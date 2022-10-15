@@ -17,6 +17,12 @@
         </Setter>
     </Style>
 
+    <Style x:Key="tileDeleteButton" TargetType="Button">
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0 0 50 0"/>
+    </Style>
+
     <Style x:Key="tilePanelState" TargetType="TextBlock">
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="0 0 50 0" />

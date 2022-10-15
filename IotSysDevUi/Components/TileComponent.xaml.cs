@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Azure.Devices;
 
 namespace IotSysDevUi.Components
 {
@@ -20,12 +21,15 @@ namespace IotSysDevUi.Components
     /// </summary>
     public partial class TileComponent : UserControl
     {
+        private readonly RegistryManager registryManager = RegistryManager.CreateFromConnectionString("HostName=SharedHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=MAZ7jkUzHFnph4OvNsuvjcJxQLS0dcHRa7TV5g0/Rzw=");
+
         public TileComponent()
         {
             InitializeComponent();
         }
 
         public static readonly DependencyProperty DeviceNameProperty = DependencyProperty.Register("DeviceName", typeof(string), typeof(TileComponent));
+
         public string DeviceName
         {
             get { return (string)GetValue(DeviceNameProperty); }
@@ -77,6 +81,21 @@ namespace IotSysDevUi.Components
         {
             get { return (string)GetValue(StateInActiveProperty); }
             set { SetValue(StateInActiveProperty, value); }
+        }
+
+
+        public static readonly DependencyProperty DeviceIdProperty = DependencyProperty.Register("DeviceId", typeof(string), typeof(TileComponent));
+        public string DeviceId
+        {
+            get { return (string)GetValue(DeviceIdProperty); }
+            set { SetValue(DeviceIdProperty, value); }
+        }
+
+        private async void deleteDeviceBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(DeviceId);
+            var device = await registryManager.GetDeviceAsync(DeviceId);
+            await registryManager.RemoveDeviceAsync(DeviceId);
         }
     }
 }
