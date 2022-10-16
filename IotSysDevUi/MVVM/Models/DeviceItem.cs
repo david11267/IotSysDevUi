@@ -12,4 +12,5 @@ public class DeviceItem
     public string StateActive { get; set; } = "";
     public string StateInActive { get; set; } = "";
 
+
 }
