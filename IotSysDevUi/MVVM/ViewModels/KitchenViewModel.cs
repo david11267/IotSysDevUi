@@ -23,20 +23,15 @@ internal class KitchenViewModel
         _deviceItems = new ObservableCollection<DeviceItem>();
         PopulateDeviceItemsAsync().ConfigureAwait(false);
         SetInterval(TimeSpan.FromSeconds(3));
-        
     }
 
-    
+
     public string Title { get; set; } = "Kitchen";
-    public string Temperature { get; set; } = generateRandomNumber(10,22)+" °C";
-    public string Humidity { get; set; } =  generateRandomNumber(1,99)+" %";
+    public string Temperature { get; set; } = "23 °C";
+    public string Humidity { get; set; } = "34 %";
     public IEnumerable<DeviceItem> DeviceItems => _deviceItems;
 
-    private static string generateRandomNumber(int minValue, int maxValue)
-    {
-        Random rnd = new Random();
-        return rnd.Next(minValue, maxValue).ToString();
-    }
+
 
     private void SetInterval(TimeSpan interval)
     {
@@ -78,7 +73,7 @@ internal class KitchenViewModel
     private async Task PopulateDeviceItemsAsync()
     {
         //var result = registryManager.CreateQuery("select * from devices where location = 'kitchen'");
-        var result = registryManager.CreateQuery("SELECT * FROM devices where properties.reported.location = 'kitchen'"); //where properties.reported.location = 'kitchen'
+        var result = registryManager.CreateQuery("select * from devices "); //where properties.reported.location = 'kitchen'
 
         if (result.HasMoreResults)
         {
