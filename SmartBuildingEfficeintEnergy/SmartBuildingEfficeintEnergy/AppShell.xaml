@@ -6,9 +6,17 @@
     xmlns:local="clr-namespace:SmartBuildingEfficeintEnergy"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+    <TabBar>
+        <ShellContent
+            Title="Notes"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="icon_notes" />
+
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate local:EngeryPriceCalendar}"
+            Icon="icon_about" />
+    </TabBar>
 
 </Shell>

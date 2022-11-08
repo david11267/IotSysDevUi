@@ -22,10 +22,10 @@ internal class KitchenViewModel
         _tempList = new List<DeviceItem>();
         _deviceItems = new ObservableCollection<DeviceItem>();
         PopulateDeviceItemsAsync().ConfigureAwait(false);
-        SetInterval(TimeSpan.FromSeconds(3));
+        SetInterval(TimeSpan.FromSeconds(5));
     }
 
-
+     
     public string Title { get; set; } = "Kitchen";
     public string Temperature { get; set; } = "23 °C";
     public string Humidity { get; set; } = "34 %";
@@ -106,6 +106,13 @@ internal class KitchenViewModel
                         case "light":
                             device.IconActive = "\uf672";
                             device.IconInActive = "\uf0eb";
+                            device.StateActive = "ON";
+                            device.StateInActive = "OFF";
+                            break;
+
+                        case "thermostat":
+                            device.IconActive = "\uf2c9";
+                            device.IconInActive = "\f2cb";
                             device.StateActive = "ON";
                             device.StateInActive = "OFF";
                             break;

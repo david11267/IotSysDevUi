@@ -16,3 +16,6 @@ public static class MauiProgram
 		return builder.Build();
 	}
 }
+
+//cURRENT
+//https://learn.microsoft.com/en-us/dotnet/maui/tutorials/notes-app/?tutorial-step=3
